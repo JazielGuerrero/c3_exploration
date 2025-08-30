@@ -40,8 +40,8 @@ if (SUCCEEDED(m_controller->QueryInterface(IID_PPV_ARGS(&controller2)))) {
 }
 ```
 
-which replaces the default white background of the webview to transparent. Then I build the webview. The `webview_Static.lib`
-contain in this repo already has the this modification applied. 
+which replaces the default white background of the webview for transparent. Then I build the webview. The `webview_static.lib`
+contain in this repo already has this modification applied. 
 
 ### UI architecture
 

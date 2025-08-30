@@ -12,6 +12,8 @@ can find in the `src/bindings` directory. The repo also contains the **static li
 
 ## How it works
 
+![Example](https://github.com/jazielguerrero/c3_exploration/blob/develop/resources/banner.png?raw=true)
+
 - I'm using **GLFW** to get the width and height of the window. I'm doing it this way because initially I wanted to use GLFW
   and mount the webview on top of it. However, I encounter some issues when passing the `nwh` to: `fn Webview create(int debug, void* window) @extern("webview_create");`
 

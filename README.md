@@ -25,6 +25,24 @@ Not working as expected yet.
   2. **`render`** – in charge of rendering bgfx. In `main.c3` you can see a function named `render` which is called from the webview, 
 specially by [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame).
 
+### Webview (Important Note)
+
+The [webview](https://github.com/webview/webview) by default adds a white background that causes bgfx no to be visible.
+To overcome this, I had to modify the [win32_edge.hh](https://github.com/webview/webview/blob/f9cbb69abe5d875bb7c4bafe8329340462ad1ca9/core/include/webview/detail/backends/win32_edge.hh#L795)
+above this line I added the following code:
+
+```c++
+ICoreWebView2Controller2* controller2 = nullptr;
+if (SUCCEEDED(m_controller->QueryInterface(IID_PPV_ARGS(&controller2)))) {
+  COREWEBVIEW2_COLOR c{0,0,0,0}; // A,R,G,B
+  controller2->put_DefaultBackgroundColor(c);
+  controller2->Release();
+}
+```
+
+which replaces the default white background of the webview to transparent. Then I build the webview. The `webview_Static.lib`
+contain in this repo already has the this modification applied. 
+
 ### UI architecture
 
 I'm also trying to figure out a project structure/architecture where I can implement my UI components like if I

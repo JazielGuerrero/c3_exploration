@@ -41,7 +41,8 @@ if (SUCCEEDED(m_controller->QueryInterface(IID_PPV_ARGS(&controller2)))) {
 ```
 
 which replaces the default white background of the webview for transparent. Then I build the webview. The `webview_static.lib`
-contain in this repo already has this modification applied. 
+contain in this repo already has this modification applied. Here is a fork of webview where I applied this change, have the
+intention of doing it for Darwin and Linux, but that won't be anytime soon: https://github.com/JazielGuerrero/webview 
 
 ### UI architecture
 

@@ -28,21 +28,54 @@
   // "target": "windows-x64",
   // Targets.
   "targets": {
-    "c3_exploration": {
+    "windows-x64": {
       // Executable or library.
       "type": "executable",
+      "target": "windows-x64",
       // Additional libraries, sources
       // and overrides of global settings here.
       "linked-libraries": [
-        "windows/bgfxRelease",
-        "windows/bxRelease",
-        "windows/bimgRelease",
+        "lib/windows-x64/bgfxRelease",
+        "lib/windows-x64/bxRelease",
+        "lib/windows-x64/bimgRelease",
         "gdi32",
         "opengl32",
-        "windows/webview_static",
-        "windows/glfw3"
+        "lib/windows-x64/webview_static",
+        "lib/windows-x64/glfw3"
       ]
     },
+    "linux-x64": {
+      "type": "executable",
+      "target": "linux-x64",
+      "c-sources": [ "src/atomic_fix.c", "src/x11_helper.c" ],
+      "linked-libraries": [
+        "atomic",
+        "lib/linux-x64/libbgfxRelease.a",
+        "lib/linux-x64/libbimgRelease.a",
+        "lib/linux-x64/libbxRelease.a",
+        "lib/linux-x64/libglfw3.a",
+        "lib/linux-x64/libwebview.a",
+        "stdc++",
+        "gtk-3",
+        "webkit2gtk-4.1",
+        "gdk-3",
+        "z",
+        "pangocairo-1.0",
+        "pango-1.0",
+        "harfbuzz",
+        "atk-1.0",
+        "cairo-gobject",
+        "cairo",
+        "gdk_pixbuf-2.0",
+        "soup-3.0",
+        "gmodule-2.0",
+        "glib-2.0",
+        "gio-2.0",
+        "javascriptcoregtk-4.1",
+        "gobject-2.0",
+        "glib-2.0"
+      ]
+    }
   },
   // Global settings.
   // CPU name, used for optimizations in the LLVM backend.

@@ -1945,7 +1945,7 @@ struct Allocator
  *
  *  @ingroup init
  */
-fn int init() @extern("glfwInit");
+fn int init() @cname("glfwInit");
 
 /*! @brief Terminates the GLFW library.
  *
@@ -1979,7 +1979,7 @@ fn int init() @extern("glfwInit");
  *
  *  @ingroup init
  */
-fn void terminate() @extern("glfwTerminate");
+fn void terminate() @cname("glfwTerminate");
 
 /*! @brief Sets the specified init hint to the desired value.
  *
@@ -2011,7 +2011,7 @@ fn void terminate() @extern("glfwTerminate");
  *
  *  @ingroup init
  */
-fn void init_hint(int hint, int value) @extern("glfwInitHint");
+fn void init_hint(int hint, int value) @cname("glfwInitHint");
 
 /*! @brief Sets the init allocator to the desired value.
  *
@@ -2042,7 +2042,7 @@ fn void init_hint(int hint, int value) @extern("glfwInitHint");
  *
  *  @ingroup init
  */
-fn void init_allocator(Allocator* allocator) @extern("glfwInitAllocator");
+fn void init_allocator(Allocator* allocator) @cname("glfwInitAllocator");
 
 /*! @brief Sets the desired Vulkan `vkGetInstanceProcAddr` function.
  *
@@ -2086,7 +2086,7 @@ fn void init_allocator(Allocator* allocator) @extern("glfwInitAllocator");
  *
  *  @ingroup init
  */
-fn void init_vulkan_Loader(void* loader) @extern("glfwInitVulkanLoader");
+fn void init_vulkan_Loader(void* loader) @cname("glfwInitVulkanLoader");
 
 /*! @brief Retrieves the version of the GLFW library.
  *
@@ -2113,7 +2113,7 @@ fn void init_vulkan_Loader(void* loader) @extern("glfwInitVulkanLoader");
  *
  *  @ingroup init
  */
-fn void get_version(int* major, int* minor, int* rev) @extern("glfwGetVersion");
+fn void get_version(int* major, int* minor, int* rev) @cname("glfwGetVersion");
 
 /*! @brief Returns a string describing the compile-time configuration.
  *
@@ -2147,7 +2147,7 @@ fn void get_version(int* major, int* minor, int* rev) @extern("glfwGetVersion");
  *
  *  @ingroup init
  */
-fn ZString get_version_string() @extern("glfwGetVersionString");
+fn ZString get_version_string() @cname("glfwGetVersionString");
 
 /*! @brief Returns and clears the last error for the calling thread.
  *
@@ -2178,7 +2178,7 @@ fn ZString get_version_string() @extern("glfwGetVersionString");
  *
  *  @ingroup init
  */
-fn int get_error(String* description) @extern("glfwGetError");
+fn int get_error(String* description) @cname("glfwGetError");
 
 /*! @brief Sets the error callback.
  *
@@ -2224,7 +2224,7 @@ fn int get_error(String* description) @extern("glfwGetError");
  *
  *  @ingroup init
  */
-fn ErrorFun set_error_callback(ErrorFun callback) @extern("glfwSetErrorCallback");
+fn ErrorFun set_error_callback(ErrorFun callback) @cname("glfwSetErrorCallback");
 
 /*! @brief Returns the currently selected platform.
  *
@@ -2245,7 +2245,7 @@ fn ErrorFun set_error_callback(ErrorFun callback) @extern("glfwSetErrorCallback"
  *
  *  @ingroup init
  */
-fn int get_platform() @extern("glfwGetPlatform");
+fn int get_platform() @cname("glfwGetPlatform");
 
 /*! @brief Returns whether the library includes support for the specified platform.
  *
@@ -2269,7 +2269,7 @@ fn int get_platform() @extern("glfwGetPlatform");
  *
  *  @ingroup init
  */
-fn int platform_supported(int platform) @extern("glfwPlatformSupported");
+fn int platform_supported(int platform) @cname("glfwPlatformSupported");
 
 /*! @brief Returns the currently connected monitors.
  *
@@ -2298,7 +2298,7 @@ fn int platform_supported(int platform) @extern("glfwPlatformSupported");
  *
  *  @ingroup monitor
  */
-fn Monitor*[] get_monitors(int* count) @extern("glfwGetMonitors");
+fn Monitor*[] get_monitors(int* count) @cname("glfwGetMonitors");
 
 /*! @brief Returns the primary monitor.
  *
@@ -2322,7 +2322,7 @@ fn Monitor*[] get_monitors(int* count) @extern("glfwGetMonitors");
  *
  *  @ingroup monitor
  */
-fn Monitor* get_primary_monitor() @extern("glfwGetPrimaryMonitor");
+fn Monitor* get_primary_monitor() @cname("glfwGetPrimaryMonitor");
 
 /*! @brief Returns the position of the monitor's viewport on the virtual screen.
  *
@@ -2347,7 +2347,7 @@ fn Monitor* get_primary_monitor() @extern("glfwGetPrimaryMonitor");
  *
  *  @ingroup monitor
  */
-fn void get_monitor_pos(Monitor* monitor, int* xpos, int* ypos) @extern("glfwGetMonitorPos");
+fn void get_monitor_pos(Monitor* monitor, int* xpos, int* ypos) @cname("glfwGetMonitorPos");
 
 /*! @brief Retrieves the work area of the monitor.
  *
@@ -2378,7 +2378,7 @@ fn void get_monitor_pos(Monitor* monitor, int* xpos, int* ypos) @extern("glfwGet
  *
  *  @ingroup monitor
  */
-fn void get_monitor_workarea(Monitor* monitor, int* xpos, int* ypos, int* width, int* height) @extern("glfwGetMonitorWorkarea");
+fn void get_monitor_workarea(Monitor* monitor, int* xpos, int* ypos, int* width, int* height) @cname("glfwGetMonitorWorkarea");
 
 /*! @brief Returns the physical size of the monitor.
  *
@@ -2413,7 +2413,7 @@ fn void get_monitor_workarea(Monitor* monitor, int* xpos, int* ypos, int* width,
  *
  *  @ingroup monitor
  */
-fn void get_monitor_physical_size(Monitor* monitor, int* widthMM, int* heightMM) @extern("glfwGetMonitorPhysicalSize");
+fn void get_monitor_physical_size(Monitor* monitor, int* widthMM, int* heightMM) @cname("glfwGetMonitorPhysicalSize");
 
 /*! @brief Retrieves the content scale for the specified monitor.
  *
@@ -2448,7 +2448,7 @@ fn void get_monitor_physical_size(Monitor* monitor, int* widthMM, int* heightMM)
  *
  *  @ingroup monitor
  */
-fn void get_monitor_content_scale(Monitor* monitor, float* xscale, float* yscale) @extern("glfwGetMonitorContentScale");
+fn void get_monitor_content_scale(Monitor* monitor, float* xscale, float* yscale) @cname("glfwGetMonitorContentScale");
 
 /*! @brief Returns the name of the specified monitor.
  *
@@ -2474,7 +2474,7 @@ fn void get_monitor_content_scale(Monitor* monitor, float* xscale, float* yscale
  *
  *  @ingroup monitor
  */
-fn ZString get_monitor_name(Monitor* monitor) @extern("glfwGetMonitorName");
+fn ZString get_monitor_name(Monitor* monitor) @cname("glfwGetMonitorName");
 
 /*! @brief Sets the user pointer of the specified monitor.
  *
@@ -2500,7 +2500,7 @@ fn ZString get_monitor_name(Monitor* monitor) @extern("glfwGetMonitorName");
  *
  *  @ingroup monitor
  */
-fn void set_monitor_user_pointer(Monitor* monitor, void* pointer) @extern("glfwSetMonitorUserPointer");
+fn void set_monitor_user_pointer(Monitor* monitor, void* pointer) @cname("glfwSetMonitorUserPointer");
 
 /*! @brief Returns the user pointer of the specified monitor.
  *
@@ -2524,7 +2524,7 @@ fn void set_monitor_user_pointer(Monitor* monitor, void* pointer) @extern("glfwS
  *
  *  @ingroup monitor
  */
-fn void* get_monitor_user_pointer(Monitor* monitor) @extern("glfwGetMonitorUserPointer");
+fn void* get_monitor_user_pointer(Monitor* monitor) @cname("glfwGetMonitorUserPointer");
 
 /*! @brief Sets the monitor configuration callback.
  *
@@ -2554,7 +2554,7 @@ fn void* get_monitor_user_pointer(Monitor* monitor) @extern("glfwGetMonitorUserP
  *
  *  @ingroup monitor
  */
-fn Monitorfun set_monitor_callback(Monitorfun callback) @extern("glfwSetMonitorCallback");
+fn Monitorfun set_monitor_callback(Monitorfun callback) @cname("glfwSetMonitorCallback");
 
 /*! @brief Returns the available video modes for the specified monitor.
  *
@@ -2588,7 +2588,7 @@ fn Monitorfun set_monitor_callback(Monitorfun callback) @extern("glfwSetMonitorC
  *
  *  @ingroup monitor
  */
-fn VidMode[] get_video_modes(Monitor* monitor, int* count) @extern("glfwGetVideoModes");
+fn VidMode[] get_video_modes(Monitor* monitor, int* count) @cname("glfwGetVideoModes");
 
 /*! @brief Returns the current mode of the specified monitor.
  *
@@ -2616,7 +2616,7 @@ fn VidMode[] get_video_modes(Monitor* monitor, int* count) @extern("glfwGetVideo
  *
  *  @ingroup monitor
  */
-fn VidMode* get_video_mode(Monitor* monitor) @extern("glfwGetVideoMode");
+fn VidMode* get_video_mode(Monitor* monitor) @cname("glfwGetVideoMode");
 
 /*! @brief Generates a gamma ramp and sets it for the specified monitor.
  *
@@ -2649,7 +2649,7 @@ fn VidMode* get_video_mode(Monitor* monitor) @extern("glfwGetVideoMode");
  *
  *  @ingroup monitor
  */
-fn void set_gamma(Monitor* monitor, float gamma) @extern("glfwSetGamma");
+fn void set_gamma(Monitor* monitor, float gamma) @cname("glfwSetGamma");
 
 /*! @brief Returns the current gamma ramp for the specified monitor.
  *
@@ -2679,7 +2679,7 @@ fn void set_gamma(Monitor* monitor, float gamma) @extern("glfwSetGamma");
  *
  *  @ingroup monitor
  */
-fn GammaRamp* get_gamma_ramp(Monitor* monitor) @extern("glfwGetGammaRamp");
+fn GammaRamp* get_gamma_ramp(Monitor* monitor) @cname("glfwGetGammaRamp");
 
 /*! @brief Sets the current gamma ramp for the specified monitor.
  *
@@ -2720,7 +2720,7 @@ fn GammaRamp* get_gamma_ramp(Monitor* monitor) @extern("glfwGetGammaRamp");
  *
  *  @ingroup monitor
  */
-fn void set_gamma_ramp(Monitor* monitor, GammaRamp* ramp) @extern("glfwSetGammaRamp");
+fn void set_gamma_ramp(Monitor* monitor, GammaRamp* ramp) @cname("glfwSetGammaRamp");
 
 /*! @brief Resets all window hints to their default values.
  *
@@ -2739,7 +2739,7 @@ fn void set_gamma_ramp(Monitor* monitor, GammaRamp* ramp) @extern("glfwSetGammaR
  *
  *  @ingroup window
  */
-fn void default_window_hints() @extern("glfwDefaultWindowHints");
+fn void default_window_hints() @cname("glfwDefaultWindowHints");
 
 /*! @brief Sets the specified window hint to the desired value.
  *
@@ -2774,7 +2774,7 @@ fn void default_window_hints() @extern("glfwDefaultWindowHints");
  *
  *  @ingroup window
  */
-fn void window_hint(int hint, int value) @extern("glfwWindowHint");
+fn void window_hint(int hint, int value) @cname("glfwWindowHint");
 
 /*! @brief Sets the specified window hint to the desired value.
  *
@@ -2812,7 +2812,7 @@ fn void window_hint(int hint, int value) @extern("glfwWindowHint");
  *
  *  @ingroup window
  */
-fn void window_hint_string(int hint, ZString value) @extern("glfwWindowHintString");
+fn void window_hint_string(int hint, ZString value) @cname("glfwWindowHintString");
 
 /*! @brief Creates a window and its associated context.
  *
@@ -2956,7 +2956,7 @@ fn void window_hint_string(int hint, ZString value) @extern("glfwWindowHintStrin
  *
  *  @ingroup window
  */
-fn Window* create_window(int width, int height, ZString title, Monitor* monitor, Window* share) @extern("glfwCreateWindow");
+fn Window* create_window(int width, int height, ZString title, Monitor* monitor, Window* share) @cname("glfwCreateWindow");
 
 /*! @brief Destroys the specified window and its context.
  *
@@ -2985,7 +2985,7 @@ fn Window* create_window(int width, int height, ZString title, Monitor* monitor,
  *
  *  @ingroup window
  */
-fn void destroy_window(Window* window) @extern("glfwDestroyWindow");
+fn void destroy_window(Window* window) @cname("glfwDestroyWindow");
 
 /*! @brief Checks the close flag of the specified window.
  *
@@ -3005,7 +3005,7 @@ fn void destroy_window(Window* window) @extern("glfwDestroyWindow");
  *
  *  @ingroup window
  */
-fn int window_should_close(Window* window) @extern("glfwWindowShouldClose");
+fn int window_should_close(Window* window) @cname("glfwWindowShouldClose");
 
 /*! @brief Sets the close flag of the specified window.
  *
@@ -3027,7 +3027,7 @@ fn int window_should_close(Window* window) @extern("glfwWindowShouldClose");
  *
  *  @ingroup window
  */
-fn void set_window_should_close(Window* window, int value) @extern("glfwSetWindowShouldClose");
+fn void set_window_should_close(Window* window, int value) @cname("glfwSetWindowShouldClose");
 
 /*! @brief Returns the title of the specified window.
  *
@@ -3059,7 +3059,7 @@ fn void set_window_should_close(Window* window, int value) @extern("glfwSetWindo
  *
  *  @ingroup window
  */
-fn ZString get_window_title(Window* window) @extern("glfwGetWindowTitle");
+fn ZString get_window_title(Window* window) @cname("glfwGetWindowTitle");
 
 /*! @brief Sets the title of the specified window.
  *
@@ -3085,7 +3085,7 @@ fn ZString get_window_title(Window* window) @extern("glfwGetWindowTitle");
  *
  *  @ingroup window
  */
-fn void set_window_title(Window* window, ZString title) @extern("glfwSetWindowTitle");
+fn void set_window_title(Window* window, ZString title) @cname("glfwSetWindowTitle");
 
 /*! @brief Sets the icon for the specified window.
  *
@@ -3134,7 +3134,7 @@ fn void set_window_title(Window* window, ZString title) @extern("glfwSetWindowTi
  *
  *  @ingroup window
  */
-fn void set_window_icon(Window* window, int count, Image* images) @extern("glfwSetWindowIcon");
+fn void set_window_icon(Window* window, int count, Image* images) @cname("glfwSetWindowIcon");
 
 /*! @brief Retrieves the position of the content area of the specified window.
  *
@@ -3166,7 +3166,7 @@ fn void set_window_icon(Window* window, int count, Image* images) @extern("glfwS
  *
  *  @ingroup window
  */
-fn void get_window_pos(Window* window, int* xpos, int* ypos) @extern("glfwGetWindowPos");
+fn void get_window_pos(Window* window, int* xpos, int* ypos) @cname("glfwGetWindowPos");
 
 /*! @brief Sets the position of the content area of the specified window.
  *
@@ -3201,7 +3201,7 @@ fn void get_window_pos(Window* window, int* xpos, int* ypos) @extern("glfwGetWin
  *
  *  @ingroup window
  */
-fn void set_window_pos(Window* window, int xpos, int ypos) @extern("glfwSetWindowPos");
+fn void set_window_pos(Window* window, int xpos, int ypos) @cname("glfwSetWindowPos");
 
 /*! @brief Retrieves the size of the content area of the specified window.
  *
@@ -3231,7 +3231,7 @@ fn void set_window_pos(Window* window, int xpos, int ypos) @extern("glfwSetWindo
  *
  *  @ingroup window
  */
-fn void get_window_size(Window* window, int* width, int* height) @extern("glfwGetWindowSize");
+fn void get_window_size(Window* window, int* width, int* height) @cname("glfwGetWindowSize");
 
 /*! @brief Sets the size limits of the specified window.
  *
@@ -3274,7 +3274,7 @@ fn void get_window_size(Window* window, int* width, int* height) @extern("glfwGe
  *
  *  @ingroup window
  */
-fn void set_window_size_limits(Window* window, int minwidth, int minheight, int maxwidth, int maxheight) @extern("glfwSetWindowSizeLimits");
+fn void set_window_size_limits(Window* window, int minwidth, int minheight, int maxwidth, int maxheight) @cname("glfwSetWindowSizeLimits");
 
 /*! @brief Sets the aspect ratio of the specified window.
  *
@@ -3317,7 +3317,7 @@ fn void set_window_size_limits(Window* window, int minwidth, int minheight, int 
  *
  *  @ingroup window
  */
-fn void set_window_aspect_ratio(Window* window, int numer, int denom) @extern("glfwSetWindowAspectRatio");
+fn void set_window_aspect_ratio(Window* window, int numer, int denom) @cname("glfwSetWindowAspectRatio");
 
 /*! @brief Sets the size of the content area of the specified window.
  *
@@ -3355,7 +3355,7 @@ fn void set_window_aspect_ratio(Window* window, int numer, int denom) @extern("g
  *
  *  @ingroup window
  */
-fn void set_window_size(Window* window, int width, int height) @extern("glfwSetWindowSize");
+fn void set_window_size(Window* window, int width, int height) @cname("glfwSetWindowSize");
 
 /*! @brief Retrieves the size of the framebuffer of the specified window.
  *
@@ -3384,7 +3384,7 @@ fn void set_window_size(Window* window, int width, int height) @extern("glfwSetW
  *
  *  @ingroup window
  */
-fn void get_frame_buffer_size(Window* window, int* width, int* height) @extern("glfwGetFramebufferSize");
+fn void get_frame_buffer_size(Window* window, int* width, int* height) @cname("glfwGetFramebufferSize");
 
 /*! @brief Retrieves the size of the frame of the window.
  *
@@ -3421,7 +3421,7 @@ fn void get_frame_buffer_size(Window* window, int* width, int* height) @extern("
  *
  *  @ingroup window
  */
-fn void get_window_frame_size(Window* window, int* left, int* top, int* right, int* bottom) @extern("glfwGetWindowFrameSize");
+fn void get_window_frame_size(Window* window, int* left, int* top, int* right, int* bottom) @cname("glfwGetWindowFrameSize");
 
 /*! @brief Retrieves the content scale for the specified window.
  *
@@ -3454,7 +3454,7 @@ fn void get_window_frame_size(Window* window, int* left, int* top, int* right, i
  *
  *  @ingroup window
  */
-fn void get_window_content_scale(Window* window, float* xscale, float* yscale) @extern("glfwGetWindowContentScale");
+fn void get_window_content_scale(Window* window, float* xscale, float* yscale) @cname("glfwGetWindowContentScale");
 
 /*! @brief Returns the opacity of the whole window.
  *
@@ -3481,7 +3481,7 @@ fn void get_window_content_scale(Window* window, float* xscale, float* yscale) @
  *
  *  @ingroup window
  */
-fn float get_window_opacity(Window* window) @extern("glfwGetWindowOpacity");
+fn float get_window_opacity(Window* window) @cname("glfwGetWindowOpacity");
 
 /*! @brief Sets the opacity of the whole window.
  *
@@ -3513,7 +3513,7 @@ fn float get_window_opacity(Window* window) @extern("glfwGetWindowOpacity");
  *
  *  @ingroup window
  */
-fn void set_window_opacity(Window* window, float opacity) @extern("glfwSetWindowOpacity");
+fn void set_window_opacity(Window* window, float opacity) @cname("glfwSetWindowOpacity");
 
 /*! @brief Iconifies the specified window.
  *
@@ -3545,7 +3545,7 @@ fn void set_window_opacity(Window* window, float opacity) @extern("glfwSetWindow
  *
  *  @ingroup window
  */
-fn void iconify_window(Window* window) @extern("glfwIconifyWindow");
+fn void iconify_window(Window* window) @cname("glfwIconifyWindow");
 
 /*! @brief Restores the specified window.
  *
@@ -3572,7 +3572,7 @@ fn void iconify_window(Window* window) @extern("glfwIconifyWindow");
  *
  *  @ingroup window
  */
-fn void restore_window(Window* window) @extern("glfwRestoreWindow");
+fn void restore_window(Window* window) @cname("glfwRestoreWindow");
 
 /*! @brief Maximizes the specified window.
  *
@@ -3597,7 +3597,7 @@ fn void restore_window(Window* window) @extern("glfwRestoreWindow");
  *
  *  @ingroup window
  */
-fn void maximize_window(Window* window) @extern("glfwMaximizeWindow");
+fn void maximize_window(Window* window) @cname("glfwMaximizeWindow");
 
 /*! @brief Makes the specified window visible.
  *
@@ -3629,7 +3629,7 @@ fn void maximize_window(Window* window) @extern("glfwMaximizeWindow");
  *
  *  @ingroup window
  */
-fn void show_window(Window* window) @extern("glfwShowWindow");
+fn void show_window(Window* window) @cname("glfwShowWindow");
 
 /*! @brief Hides the specified window.
  *
@@ -3651,7 +3651,7 @@ fn void show_window(Window* window) @extern("glfwShowWindow");
  *
  *  @ingroup window
  */
-fn void hide_window(Window* window) @extern("glfwHideWindow");
+fn void hide_window(Window* window) @cname("glfwHideWindow");
 
 /*! @brief Brings the specified window to front and sets input focus.
  *
@@ -3690,7 +3690,7 @@ fn void hide_window(Window* window) @extern("glfwHideWindow");
  *
  *  @ingroup window
  */
-fn void focus_window(Window* window) @extern("glfwFocusWindow");
+fn void focus_window(Window* window) @cname("glfwFocusWindow");
 
 /*! @brief Requests user attention to the specified window.
  *
@@ -3717,7 +3717,7 @@ fn void focus_window(Window* window) @extern("glfwFocusWindow");
  *
  *  @ingroup window
  */
-fn void request_window_attention(Window* window) @extern("glfwRequestWindowAttention");
+fn void request_window_attention(Window* window) @cname("glfwRequestWindowAttention");
 
 /*! @brief Returns the monitor that the window uses for full screen mode.
  *
@@ -3739,7 +3739,7 @@ fn void request_window_attention(Window* window) @extern("glfwRequestWindowAtten
  *
  *  @ingroup window
  */
-fn Monitor* get_window_monitor(Window* window) @extern("glfwGetWindowMonitor");
+fn Monitor* get_window_monitor(Window* window) @cname("glfwGetWindowMonitor");
 
 /*! @brief Sets the mode, monitor, video mode and placement of a window.
  *
@@ -3795,7 +3795,7 @@ fn Monitor* get_window_monitor(Window* window) @extern("glfwGetWindowMonitor");
  *
  *  @ingroup window
  */
-fn void set_window_monitor(Window* window, Monitor* monitor, int xpos, int ypos, int width, int height, int refreshRate) @extern("glfwSetWindowMonitor");
+fn void set_window_monitor(Window* window, Monitor* monitor, int xpos, int ypos, int width, int height, int refreshRate) @cname("glfwSetWindowMonitor");
 
 /*! @brief Returns an attribute of the specified window.
  *
@@ -3832,7 +3832,7 @@ fn void set_window_monitor(Window* window, Monitor* monitor, int xpos, int ypos,
  *
  *  @ingroup window
  */
-fn int get_window_attrib(Window* window, int attrib) @extern("glfwGetWindowAttrib");
+fn int get_window_attrib(Window* window, int attrib) @cname("glfwGetWindowAttrib");
 
 /*! @brief Sets an attribute of the specified window.
  *
@@ -3874,7 +3874,7 @@ fn int get_window_attrib(Window* window, int attrib) @extern("glfwGetWindowAttri
  *
  *  @ingroup window
  */
-fn void set_window_attrib(Window* window, int attrib, int value) @extern("glfwSetWindowAttrib");
+fn void set_window_attrib(Window* window, int attrib, int value) @cname("glfwSetWindowAttrib");
 
 /*! @brief Sets the user pointer of the specified window.
  *
@@ -3897,7 +3897,7 @@ fn void set_window_attrib(Window* window, int attrib, int value) @extern("glfwSe
  *
  *  @ingroup window
  */
-fn void set_window_user_pointer(Window* window, void* pointer) @extern("glfwSetWindowUserPointer");
+fn void set_window_user_pointer(Window* window, void* pointer) @cname("glfwSetWindowUserPointer");
 
 /*! @brief Returns the user pointer of the specified window.
  *
@@ -3918,7 +3918,7 @@ fn void set_window_user_pointer(Window* window, void* pointer) @extern("glfwSetW
  *
  *  @ingroup window
  */
-fn void* get_window_user_pointer(Window* window) @extern("glfwGetWindowUserPointer");
+fn void* get_window_user_pointer(Window* window) @cname("glfwGetWindowUserPointer");
 
 /*! @brief Sets the position callback for the specified window.
  *
@@ -3953,7 +3953,7 @@ fn void* get_window_user_pointer(Window* window) @extern("glfwGetWindowUserPoint
  *
  *  @ingroup window
  */
-fn WindowposFun set_window_pos_callback(Window* window, WindowposFun callback) @extern("glfwSetWindowPosCallback");
+fn WindowposFun set_window_pos_callback(Window* window, WindowposFun callback) @cname("glfwSetWindowPosCallback");
 
 /*! @brief Sets the size callback for the specified window.
  *
@@ -3985,7 +3985,7 @@ fn WindowposFun set_window_pos_callback(Window* window, WindowposFun callback) @
  *
  *  @ingroup window
  */
-fn WindowsizeFun set_window_size_callback(Window* window, WindowsizeFun callback) @extern("glfwSetWindowSizeCallback");
+fn WindowsizeFun set_window_size_callback(Window* window, WindowsizeFun callback) @cname("glfwSetWindowSizeCallback");
 
 /*! @brief Sets the close callback for the specified window.
  *
@@ -4025,7 +4025,7 @@ fn WindowsizeFun set_window_size_callback(Window* window, WindowsizeFun callback
  *
  *  @ingroup window
  */
-fn WindowCloseFun set_window_close_callback(Window* window, WindowCloseFun callback) @extern("glfwSetWindowCloseCallback");
+fn WindowCloseFun set_window_close_callback(Window* window, WindowCloseFun callback) @cname("glfwSetWindowCloseCallback");
 
 /*! @brief Sets the refresh callback for the specified window.
  *
@@ -4061,7 +4061,7 @@ fn WindowCloseFun set_window_close_callback(Window* window, WindowCloseFun callb
  *
  *  @ingroup window
  */
-fn WindowRefreshFun set_window_refresh_callback(Window* window, WindowRefreshFun callback) @extern("glfwSetWindowRefreshCallback");
+fn WindowRefreshFun set_window_refresh_callback(Window* window, WindowRefreshFun callback) @cname("glfwSetWindowRefreshCallback");
 
 /*! @brief Sets the focus callback for the specified window.
  *
@@ -4096,7 +4096,7 @@ fn WindowRefreshFun set_window_refresh_callback(Window* window, WindowRefreshFun
  *
  *  @ingroup window
  */
-fn WindowFocusFun set_window_focus_callback(Window* window, WindowFocusFun callback) @extern("glfwSetWindowFocusCallback");
+fn WindowFocusFun set_window_focus_callback(Window* window, WindowFocusFun callback) @cname("glfwSetWindowFocusCallback");
 
 /*! @brief Sets the iconify callback for the specified window.
  *
@@ -4126,7 +4126,7 @@ fn WindowFocusFun set_window_focus_callback(Window* window, WindowFocusFun callb
  *
  *  @ingroup window
  */
-fn WindowIconifyFun set_window_iconify_callback(Window* window, WindowIconifyFun callback) @extern("glfwSetWindowIconifyCallback");
+fn WindowIconifyFun set_window_iconify_callback(Window* window, WindowIconifyFun callback) @cname("glfwSetWindowIconifyCallback");
 
 /*! @brief Sets the maximize callback for the specified window.
  *
@@ -4156,7 +4156,7 @@ fn WindowIconifyFun set_window_iconify_callback(Window* window, WindowIconifyFun
  *
  *  @ingroup window
  */
-fn WindowMaximizeFun set_window_maximize_callback(Window* window, WindowMaximizeFun callback) @extern("glfwSetWindowMaximizeCallback");
+fn WindowMaximizeFun set_window_maximize_callback(Window* window, WindowMaximizeFun callback) @cname("glfwSetWindowMaximizeCallback");
 
 /*! @brief Sets the framebuffer resize callback for the specified window.
  *
@@ -4186,7 +4186,7 @@ fn WindowMaximizeFun set_window_maximize_callback(Window* window, WindowMaximize
  *
  *  @ingroup window
  */
-fn FrameBufferSizeFun set_frame_buffer_size_callback(Window* window, FrameBufferSizeFun callback) @extern("glfwSetFramebufferSizeCallback");
+fn FrameBufferSizeFun set_frame_buffer_size_callback(Window* window, FrameBufferSizeFun callback) @cname("glfwSetFramebufferSizeCallback");
 
 /*! @brief Sets the window content scale callback for the specified window.
  *
@@ -4217,7 +4217,7 @@ fn FrameBufferSizeFun set_frame_buffer_size_callback(Window* window, FrameBuffer
  *
  *  @ingroup window
  */
-fn WindowContentScaleFun set_window_content_scale_callback(Window* window, WindowContentScaleFun callback) @extern("glfwSetWindowContentScaleCallback");
+fn WindowContentScaleFun set_window_content_scale_callback(Window* window, WindowContentScaleFun callback) @cname("glfwSetWindowContentScaleCallback");
 
 /*! @brief Processes all pending events.
  *
@@ -4255,7 +4255,7 @@ fn WindowContentScaleFun set_window_content_scale_callback(Window* window, Windo
  *
  *  @ingroup window
  */
-fn void poll_events() @extern("glfwPollEvents");
+fn void poll_events() @cname("glfwPollEvents");
 
 /*! @brief Waits until events are queued and processes them.
  *
@@ -4300,7 +4300,7 @@ fn void poll_events() @extern("glfwPollEvents");
  *
  *  @ingroup window
  */
-fn void wait_events() @extern("glfwWaitEvents");
+fn void wait_events() @cname("glfwWaitEvents");
 
 /*! @brief Waits with timeout until events are queued and processes them.
  *
@@ -4349,7 +4349,7 @@ fn void wait_events() @extern("glfwWaitEvents");
  *
  *  @ingroup window
  */
-fn void wait_events_timeout(double timeout) @extern("glfwWaitEventsTimeout");
+fn void wait_events_timeout(double timeout) @cname("glfwWaitEventsTimeout");
 
 /*! @brief Posts an empty event to the event queue.
  *
@@ -4369,7 +4369,7 @@ fn void wait_events_timeout(double timeout) @extern("glfwWaitEventsTimeout");
  *
  *  @ingroup window
  */
-fn void post_empty_event() @extern("glfwPostEmptyEvent");
+fn void post_empty_event() @cname("glfwPostEmptyEvent");
 
 /*! @brief Returns the value of an input option for the specified window.
  *
@@ -4394,7 +4394,7 @@ fn void post_empty_event() @extern("glfwPostEmptyEvent");
  *
  *  @ingroup input
  */
-fn int get_input_mode(Window* window, int mode) @extern("glfwGetInputMode");
+fn int get_input_mode(Window* window, int mode) @cname("glfwGetInputMode");
 
 /*! @brief Sets an input option for the specified window.
  *
@@ -4459,7 +4459,7 @@ fn int get_input_mode(Window* window, int mode) @extern("glfwGetInputMode");
  *
  *  @ingroup input
  */
-fn void set_input_mode(Window* window, int mode, int value) @extern("glfwSetInputMode");
+fn void set_input_mode(Window* window, int mode, int value) @cname("glfwSetInputMode");
 
 /*! @brief Returns whether raw mouse motion is supported.
  *
@@ -4488,7 +4488,7 @@ fn void set_input_mode(Window* window, int mode, int value) @extern("glfwSetInpu
  *
  *  @ingroup input
  */
-fn int raw_mouse_motion_supported() @extern("glfwRawMouseMotionSupported");
+fn int raw_mouse_motion_supported() @cname("glfwRawMouseMotionSupported");
 
 /*! @brief Returns the layout-specific name of the specified printable key.
  *
@@ -4556,7 +4556,7 @@ fn int raw_mouse_motion_supported() @extern("glfwRawMouseMotionSupported");
  *
  *  @ingroup input
  */
-fn ZString get_key_name(int key, int scancode) @extern("glfwGetKeyName");
+fn ZString get_key_name(int key, int scancode) @cname("glfwGetKeyName");
 
 /*! @brief Returns the platform-specific scancode of the specified key.
  *
@@ -4583,7 +4583,7 @@ fn ZString get_key_name(int key, int scancode) @extern("glfwGetKeyName");
  *
  *  @ingroup input
  */
-fn int get_key_scan_code(int key) @extern("glfwGetKeyScancode");
+fn int get_key_scan_code(int key) @cname("glfwGetKeyScancode");
 
 /*! @brief Returns the last reported state of a keyboard key for the specified
  *  window.
@@ -4622,7 +4622,7 @@ fn int get_key_scan_code(int key) @extern("glfwGetKeyScancode");
  *
  *  @ingroup input
  */
-fn int get_key(Window* window, int key) @extern("glfwGetKey");
+fn int get_key(Window* window, int key) @cname("glfwGetKey");
 
 /*! @brief Returns the last reported state of a mouse button for the specified
  *  window.
@@ -4651,7 +4651,7 @@ fn int get_key(Window* window, int key) @extern("glfwGetKey");
  *
  *  @ingroup input
  */
-fn int get_mouse_button(Window* window, int button) @extern("glfwGetMouseButton");
+fn int get_mouse_button(Window* window, int button) @cname("glfwGetMouseButton");
 
 /*! @brief Retrieves the position of the cursor relative to the content area of
  *  the window.
@@ -4689,7 +4689,7 @@ fn int get_mouse_button(Window* window, int button) @extern("glfwGetMouseButton"
  *
  *  @ingroup input
  */
-fn void get_cursor_pos(Window* window, double* xpos, double* ypos) @extern("glfwGetCursorPos");
+fn void get_cursor_pos(Window* window, double* xpos, double* ypos) @cname("glfwGetCursorPos");
 
 /*! @brief Sets the position of the cursor, relative to the content area of the
  *  window.
@@ -4729,7 +4729,7 @@ fn void get_cursor_pos(Window* window, double* xpos, double* ypos) @extern("glfw
  *
  *  @ingroup input
  */
-fn void set_cursor_pos(Window* window, double xpos, double ypos) @extern("glfwSetCursorPos");
+fn void set_cursor_pos(Window* window, double xpos, double ypos) @cname("glfwSetCursorPos");
 
 /*! @brief Creates a custom cursor.
  *
@@ -4767,7 +4767,7 @@ fn void set_cursor_pos(Window* window, double xpos, double ypos) @extern("glfwSe
  *
  *  @ingroup input
  */
-fn Cursor* create_cursor(Image* image, int xhot, int yhot) @extern("glfwCreateCursor");
+fn Cursor* create_cursor(Image* image, int xhot, int yhot) @cname("glfwCreateCursor");
 
 /*! @brief Creates a cursor with a standard shape.
  *
@@ -4815,7 +4815,7 @@ fn Cursor* create_cursor(Image* image, int xhot, int yhot) @extern("glfwCreateCu
  *
  *  @ingroup input
  */
-fn Cursor* create_standard_cursor(int shape) @extern("glfwCreateStandardCursor");
+fn Cursor* create_standard_cursor(int shape) @cname("glfwCreateStandardCursor");
 
 /*! @brief Destroys a cursor.
  *
@@ -4842,7 +4842,7 @@ fn Cursor* create_standard_cursor(int shape) @extern("glfwCreateStandardCursor")
  *
  *  @ingroup input
  */
-fn void destroy_cursor(Cursor* cursor) @extern("glfwDestroyCursor");
+fn void destroy_cursor(Cursor* cursor) @cname("glfwDestroyCursor");
 
 /*! @brief Sets the cursor for the window.
  *
@@ -4869,7 +4869,7 @@ fn void destroy_cursor(Cursor* cursor) @extern("glfwDestroyCursor");
  *
  *  @ingroup input
  */
-fn void set_cursor(Window* window, Cursor* cursor) @extern("glfwSetCursor");
+fn void set_cursor(Window* window, Cursor* cursor) @cname("glfwSetCursor");
 
 /*! @brief Sets the key callback.
  *
@@ -4919,7 +4919,7 @@ fn void set_cursor(Window* window, Cursor* cursor) @extern("glfwSetCursor");
  *
  *  @ingroup input
  */
-fn GLFWkeyfun set_key_callback(Window* window, GLFWkeyfun callback) @extern("glfwSetKeyCallback");
+fn GLFWkeyfun set_key_callback(Window* window, GLFWkeyfun callback) @cname("glfwSetKeyCallback");
 
 /*! @brief Sets the Unicode character callback.
  *
@@ -4962,7 +4962,7 @@ fn GLFWkeyfun set_key_callback(Window* window, GLFWkeyfun callback) @extern("glf
  *
  *  @ingroup input
  */
-fn GLFWcharfun set_char_callback(Window* window, GLFWcharfun callback) @extern("glfwSetCharCallback");
+fn GLFWcharfun set_char_callback(Window* window, GLFWcharfun callback) @cname("glfwSetCharCallback");
 
 /*! @brief Sets the Unicode character with modifiers callback.
  *
@@ -5004,7 +5004,7 @@ fn GLFWcharfun set_char_callback(Window* window, GLFWcharfun callback) @extern("
  *
  *  @ingroup input
  */
-fn GLFWcharmodsfun set_char_mods_callback(Window* window, GLFWcharmodsfun callback) @extern("glfwSetCharModsCallback");
+fn GLFWcharmodsfun set_char_mods_callback(Window* window, GLFWcharmodsfun callback) @cname("glfwSetCharModsCallback");
 
 /*! @brief Sets the mouse button callback.
  *
@@ -5041,7 +5041,7 @@ fn GLFWcharmodsfun set_char_mods_callback(Window* window, GLFWcharmodsfun callba
  *
  *  @ingroup input
  */
-fn GLFWmousebuttonfun set_mouse_button_callback(Window* window, GLFWmousebuttonfun callback) @extern("glfwSetMouseButtonCallback");
+fn GLFWmousebuttonfun set_mouse_button_callback(Window* window, GLFWmousebuttonfun callback) @cname("glfwSetMouseButtonCallback");
 
 /*! @brief Sets the cursor position callback.
  *
@@ -5073,7 +5073,7 @@ fn GLFWmousebuttonfun set_mouse_button_callback(Window* window, GLFWmousebuttonf
  *
  *  @ingroup input
  */
-fn GLFWcursorposfun set_cursor_pos_callback(Window* window, GLFWcursorposfun callback) @extern("glfwSetCursorPosCallback");
+fn GLFWcursorposfun set_cursor_pos_callback(Window* window, GLFWcursorposfun callback) @cname("glfwSetCursorPosCallback");
 
 /*! @brief Sets the cursor enter/leave callback.
  *
@@ -5104,7 +5104,7 @@ fn GLFWcursorposfun set_cursor_pos_callback(Window* window, GLFWcursorposfun cal
  *
  *  @ingroup input
  */
-fn GLFWcursorenterfun set_cursor_enter_callback(Window* window, GLFWcursorenterfun callback) @extern("glfwSetCursorEnterCallback");
+fn GLFWcursorenterfun set_cursor_enter_callback(Window* window, GLFWcursorenterfun callback) @cname("glfwSetCursorEnterCallback");
 
 /*! @brief Sets the scroll callback.
  *
@@ -5138,7 +5138,7 @@ fn GLFWcursorenterfun set_cursor_enter_callback(Window* window, GLFWcursorenterf
  *
  *  @ingroup input
  */
-fn GLFWscrollfun set_scroll_callback(Window* window, GLFWscrollfun callback) @extern("glfwSetScrollCallback");
+fn GLFWscrollfun set_scroll_callback(Window* window, GLFWscrollfun callback) @cname("glfwSetScrollCallback");
 
 /*! @brief Sets the path drop callback.
  *
@@ -5173,7 +5173,7 @@ fn GLFWscrollfun set_scroll_callback(Window* window, GLFWscrollfun callback) @ex
  *
  *  @ingroup input
  */
-fn GLFWdropfun set_drop_callback(Window* window, GLFWdropfun callback) @extern("glfwSetDropCallback");
+fn GLFWdropfun set_drop_callback(Window* window, GLFWdropfun callback) @cname("glfwSetDropCallback");
 
 /*! @brief Returns whether the specified joystick is present.
  *
@@ -5197,7 +5197,7 @@ fn GLFWdropfun set_drop_callback(Window* window, GLFWdropfun callback) @extern("
  *
  *  @ingroup input
  */
-fn int joystick_present(int jid) @extern("glfwJoystickPresent");
+fn int joystick_present(int jid) @cname("glfwJoystickPresent");
 
 /*! @brief Returns the values of all axes of the specified joystick.
  *
@@ -5230,7 +5230,7 @@ fn int joystick_present(int jid) @extern("glfwJoystickPresent");
  *
  *  @ingroup input
  */
-fn float[] get_joystick_axes(int jid, int* count) @extern("glfwGetJoystickAxes");
+fn float[] get_joystick_axes(int jid, int* count) @cname("glfwGetJoystickAxes");
 
 /*! @brief Returns the state of all buttons of the specified joystick.
  *
@@ -5271,7 +5271,7 @@ fn float[] get_joystick_axes(int jid, int* count) @extern("glfwGetJoystickAxes")
  *
  *  @ingroup input
  */
-fn char[] get_joystick_buttons(int jid, int* count) @extern("glfwGetJoystickButtons");
+fn char[] get_joystick_buttons(int jid, int* count) @cname("glfwGetJoystickButtons");
 
 /*! @brief Returns the state of all hats of the specified joystick.
  *
@@ -5328,7 +5328,7 @@ fn char[] get_joystick_buttons(int jid, int* count) @extern("glfwGetJoystickButt
  *
  *  @ingroup input
  */
-fn char[] get_joystick_hats(int jid, int* count) @extern("glfwGetJoystickHats");
+fn char[] get_joystick_hats(int jid, int* count) @cname("glfwGetJoystickHats");
 
 /*! @brief Returns the name of the specified joystick.
  *
@@ -5359,7 +5359,7 @@ fn char[] get_joystick_hats(int jid, int* count) @extern("glfwGetJoystickHats");
  *
  *  @ingroup input
  */
-fn ZString get_joystick_name(int jid) @extern("glfwGetJoystickName");
+fn ZString get_joystick_name(int jid) @cname("glfwGetJoystickName");
 
 /*! @brief Returns the SDL compatible GUID of the specified joystick.
  *
@@ -5400,7 +5400,7 @@ fn ZString get_joystick_name(int jid) @extern("glfwGetJoystickName");
  *
  *  @ingroup input
  */
-fn ZString get_joystick_guid(int jid) @extern("glfwGetJoystickGUID");
+fn ZString get_joystick_guid(int jid) @cname("glfwGetJoystickGUID");
 
 /*! @brief Sets the user pointer of the specified joystick.
  *
@@ -5426,7 +5426,7 @@ fn ZString get_joystick_guid(int jid) @extern("glfwGetJoystickGUID");
  *
  *  @ingroup input
  */
-fn void set_joystick_user_pointer(int jid, void* pointer) @extern("glfwSetJoystickUserPointer");
+fn void set_joystick_user_pointer(int jid, void* pointer) @cname("glfwSetJoystickUserPointer");
 
 /*! @brief Returns the user pointer of the specified joystick.
  *
@@ -5450,7 +5450,7 @@ fn void set_joystick_user_pointer(int jid, void* pointer) @extern("glfwSetJoysti
  *
  *  @ingroup input
  */
-fn void* get_joystick_user_pointer(int jid) @extern("glfwGetJoystickUserPointer");
+fn void* get_joystick_user_pointer(int jid) @cname("glfwGetJoystickUserPointer");
 
 /*! @brief Returns whether the specified joystick has a gamepad mapping.
  *
@@ -5478,7 +5478,7 @@ fn void* get_joystick_user_pointer(int jid) @extern("glfwGetJoystickUserPointer"
  *
  *  @ingroup input
  */
-fn int joystick_is_gamepad(int jid) @extern("glfwJoystickIsGamepad");
+fn int joystick_is_gamepad(int jid) @cname("glfwJoystickIsGamepad");
 
 /*! @brief Sets the joystick configuration callback.
  *
@@ -5514,7 +5514,7 @@ fn int joystick_is_gamepad(int jid) @extern("glfwJoystickIsGamepad");
  *
  *  @ingroup input
  */
-fn GLFWjoystickfun set_joystick_callback(GLFWjoystickfun callback) @extern("glfwSetJoystickCallback");
+fn GLFWjoystickfun set_joystick_callback(GLFWjoystickfun callback) @cname("glfwSetJoystickCallback");
 
 /*! @brief Adds the specified SDL_GameControllerDB gamepad mappings.
  *
@@ -5548,7 +5548,7 @@ fn GLFWjoystickfun set_joystick_callback(GLFWjoystickfun callback) @extern("glfw
  *
  *  @ingroup input
  */
-fn int update_gamepad_mappings(ZString string) @extern("glfwUpdateGamepadMappings");
+fn int update_gamepad_mappings(ZString string) @cname("glfwUpdateGamepadMappings");
 
 /*! @brief Returns the human-readable gamepad name for the specified joystick.
  *
@@ -5580,7 +5580,7 @@ fn int update_gamepad_mappings(ZString string) @extern("glfwUpdateGamepadMapping
  *
  *  @ingroup input
  */
-fn ZString get_gamepad_name(int jid) @extern("glfwGetGamepadName");
+fn ZString get_gamepad_name(int jid) @cname("glfwGetGamepadName");
 
 /*! @brief Retrieves the state of the specified joystick remapped as a gamepad.
  *
@@ -5618,7 +5618,7 @@ fn ZString get_gamepad_name(int jid) @extern("glfwGetGamepadName");
  *
  *  @ingroup input
  */
-fn int get_gamepad_state(int jid, GamepadState* state) @extern("glfwGetGamepadState");
+fn int get_gamepad_state(int jid, GamepadState* state) @cname("glfwGetGamepadState");
 
 /*! @brief Sets the clipboard to the specified string.
  *
@@ -5648,7 +5648,7 @@ fn int get_gamepad_state(int jid, GamepadState* state) @extern("glfwGetGamepadSt
  *
  *  @ingroup input
  */
-fn void set_clipboard_string(Window* window, ZString string) @extern("glfwSetClipboardString");
+fn void set_clipboard_string(Window* window, ZString string) @cname("glfwSetClipboardString");
 
 /*! @brief Returns the contents of the clipboard as a string.
  *
@@ -5683,7 +5683,7 @@ fn void set_clipboard_string(Window* window, ZString string) @extern("glfwSetCli
  *
  *  @ingroup input
  */
-fn ZString get_clipboard_string(Window* window) @extern("glfwGetClipboardString");
+fn ZString get_clipboard_string(Window* window) @cname("glfwGetClipboardString");
 
 /*! @brief Returns the GLFW time.
  *
@@ -5713,7 +5713,7 @@ fn ZString get_clipboard_string(Window* window) @extern("glfwGetClipboardString"
  *
  *  @ingroup input
  */
-fn double get_time() @extern("glfwGetTime");
+fn double get_time() @cname("glfwGetTime");
 
 /*! @brief Sets the GLFW time.
  *
@@ -5743,7 +5743,7 @@ fn double get_time() @extern("glfwGetTime");
  *
  *  @ingroup input
  */
-fn void set_time(double time) @extern("glfwSetTime");
+fn void set_time(double time) @cname("glfwSetTime");
 
 /*! @brief Returns the current value of the raw timer.
  *
@@ -5765,7 +5765,7 @@ fn void set_time(double time) @extern("glfwSetTime");
  *
  *  @ingroup input
  */
-fn ulong get_timer_value() @extern("glfwGetTimerValue");
+fn ulong get_timer_value() @cname("glfwGetTimerValue");
 
 /*! @brief Returns the frequency, in Hz, of the raw timer.
  *
@@ -5785,7 +5785,7 @@ fn ulong get_timer_value() @extern("glfwGetTimerValue");
  *
  *  @ingroup input
  */
-fn ulong get_timer_frequency() @extern("glfwGetTimerFrequency");
+fn ulong get_timer_frequency() @cname("glfwGetTimerFrequency");
 
 /*! @brief Makes the context of the specified window current for the calling
  *  thread.
@@ -5830,7 +5830,7 @@ fn ulong get_timer_frequency() @extern("glfwGetTimerFrequency");
  *
  *  @ingroup context
  */
-fn void make_context_current(Window* window) @extern("glfwMakeContextCurrent");
+fn void make_context_current(Window* window) @cname("glfwMakeContextCurrent");
 
 /*! @brief Returns the window whose context is current on the calling thread.
  *
@@ -5851,7 +5851,7 @@ fn void make_context_current(Window* window) @extern("glfwMakeContextCurrent");
  *
  *  @ingroup context
  */
-fn Window* get_current_context() @extern("glfwGetCurrentContext");
+fn Window* get_current_context() @cname("glfwGetCurrentContext");
 
 /*! @brief Swaps the front and back buffers of the specified window.
  *
@@ -5885,7 +5885,7 @@ fn Window* get_current_context() @extern("glfwGetCurrentContext");
  *
  *  @ingroup window
  */
-fn void swap_buffers(Window* window) @extern("glfwSwapBuffers");
+fn void swap_buffers(Window* window) @cname("glfwSwapBuffers");
 
 /*! @brief Sets the swap interval for the current context.
  *
@@ -5931,7 +5931,7 @@ fn void swap_buffers(Window* window) @extern("glfwSwapBuffers");
  *
  *  @ingroup context
  */
-fn void swap_interval(int interval) @extern("glfwSwapInterval");
+fn void swap_interval(int interval) @cname("glfwSwapInterval");
 
 /*! @brief Returns whether the specified extension is available.
  *
@@ -5969,7 +5969,7 @@ fn void swap_interval(int interval) @extern("glfwSwapInterval");
  *
  *  @ingroup context
  */
-fn int extension_supported(ZString extension) @extern("glfwExtensionSupported");
+fn int extension_supported(ZString extension) @cname("glfwExtensionSupported");
 
 /*! @brief Returns the address of the specified function for the current
  *  context.
@@ -6011,7 +6011,7 @@ fn int extension_supported(ZString extension) @extern("glfwExtensionSupported");
  *
  *  @ingroup context
  */
-fn Glproc get_proc_address(ZString procname) @extern("glfwGetProcAddress");
+fn Glproc get_proc_address(ZString procname) @cname("glfwGetProcAddress");
 
 /*! @brief Returns whether the Vulkan loader and an ICD have been found.
  *
@@ -6037,7 +6037,7 @@ fn Glproc get_proc_address(ZString procname) @extern("glfwGetProcAddress");
  *
  *  @ingroup vulkan
  */
-fn int vulkan_supported() @extern("glfwVulkanSupported");
+fn int vulkan_supported() @cname("glfwVulkanSupported");
 
 /*! @brief Returns the Vulkan instance extensions required by GLFW.
  *
@@ -6081,7 +6081,7 @@ fn int vulkan_supported() @extern("glfwVulkanSupported");
  *
  *  @ingroup vulkan
  */
-fn ZString[] get_required_instance_extensions(uint* count) @extern("glfwGetRequiredInstanceExtensions");
+fn ZString[] get_required_instance_extensions(uint* count) @cname("glfwGetRequiredInstanceExtensions");
 
 /*! @brief Returns the address of the specified Vulkan instance function.
  *
@@ -6122,7 +6122,7 @@ fn ZString[] get_required_instance_extensions(uint* count) @extern("glfwGetRequi
  *
  *  @ingroup vulkan
  */
-fn VkProc get_instance_proc_address(void* instance, ZString procname) @extern("glfwGetInstanceProcAddress");
+fn VkProc get_instance_proc_address(void* instance, ZString procname) @cname("glfwGetInstanceProcAddress");
 
 /*! @brief Returns whether the specified queue family can present images.
  *
@@ -6159,7 +6159,7 @@ fn VkProc get_instance_proc_address(void* instance, ZString procname) @extern("g
  *
  *  @ingroup vulkan
  */
-fn int get_physical_device_presentation_support(void* instance, void* device, uint queuefamily) @extern("glfwGetPhysicalDevicePresentationSupport");
+fn int get_physical_device_presentation_support(void* instance, void* device, uint queuefamily) @cname("glfwGetPhysicalDevicePresentationSupport");
 
 /*! @brief Creates a Vulkan surface for the specified window.
  *
@@ -6229,4 +6229,4 @@ fn int get_physical_device_presentation_support(void* instance, void* device, ui
  *
  *  @ingroup vulkan
  */
-fn void* create_window_surface(void* instance, Window* window, void* allocator, void* surface) @extern("glfwCreateWindowSurface");
+fn void* create_window_surface(void* instance, Window* window, void* allocator, void* surface) @cname("glfwCreateWindowSurface");

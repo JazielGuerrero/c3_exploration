@@ -98,7 +98,7 @@ struct FrontendContext {
 
 fn void on_resize(ZString id, ZString req, void* arg) @private {
     FrontendContext* ctx = (FrontendContext*) arg;
-    object::Object* result = json::tparse_string(req.str_view())!!;
+    object::Object* result = json::tparse(req.str_view())!!;
 
     if(result == null) {
         // TODO: Log this, it should't happend
@@ -124,7 +124,7 @@ fn void on_resize(ZString id, ZString req, void* arg) @private {
     ctx.height = result.get_int_at(1)!!;
 
     // TODO: Remove this from here, it should be part of the renderer and not the frontend
-    bgfx::reset(ctx.width, ctx.height, (uint) bgfx::ResetFlags.VSYNC, bgfx::TextureFormat.BC1);
+    bgfx::reset((uint) ctx.width, (uint) ctx.height, (uint) bgfx::ResetFlags.VSYNC, bgfx::TextureFormat.BC1);
     webview::return_bind(ctx.webview, id, 0, "");
 }
 

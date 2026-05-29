@@ -265,15 +265,24 @@ char[4000] s_logo =
 	0x20, 0x0f, 0x20, 0x0f, 0x20, 0x0f, 0x20, 0x0f, 0x20, 0x0f, 0x20, 0x0f, 0x20, 0x0f, 0x20, 0x0f, //  . . . . . . . .
 };
 
+extern fn void* get_x11_window_from_gtk(void* gtk_window) @cname("get_x11_window_from_gtk");
+extern fn void* get_x11_display_from_gtk(void* gtk_window) @cname("get_x11_display_from_gtk");
+
 fn void start_bgfx(webview::Webview wv, void* arg) {
     frontend::FrontendContext* ctx = (frontend::FrontendContext*) arg;
 
+    void* gtk_win = webview::get_window(ctx.webview);
+    void* x11_win = get_x11_window_from_gtk(gtk_win);
+    void* x11_dpy = get_x11_display_from_gtk(gtk_win);
+
     bgfx::Init* init = mem::new(bgfx::Init);
+    bgfx::init_ctor(init);
     init.type = bgfx::RendererType.OPENGL;
-    init.platformData.nwh  = webview::get_window(ctx.webview);
-    init.platformData.type = bgfx::NativeWindowHandleType.COUNT;
-    init.resolution.width  = ctx.width;
-    init.resolution.height = ctx.height;
+    init.platformData.ndt = x11_dpy;
+    init.platformData.nwh = x11_win;
+    init.platformData.type = bgfx::NativeWindowHandleType.DEFAULT;
+    init.resolution.width  = (uint) ctx.width;
+    init.resolution.height = (uint) ctx.height;
     init.resolution.reset  = (uint) bgfx::ResetFlags.VSYNC;
 
     bgfx::init(init);
@@ -305,7 +314,7 @@ fn void render(ZString id, ZString req, void* arg) {
         stats.textHeight,
     );
 
-    bgfx::frame(false);
+    bgfx::frame(bgfx::FrameFlags.NONE);
     webview::return_bind(ctx.webview, id, 0, "");
 }
 

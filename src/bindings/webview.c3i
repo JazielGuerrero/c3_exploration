@@ -79,7 +79,7 @@ enum WebviewHint: char {
  * the other common codes do not normally need to be handled specifically.
  * Refer to specific functions regarding handling of other codes.
  */
-enum WebviewError : const ichar {
+constdef WebviewError : inline ichar {
   /// Missing dependency.
   MISSING_DEPENDENCY = -5,
 
@@ -129,21 +129,21 @@ enum WebviewError : const ichar {
  * @retval WEBVIEW_ERROR_MISSING_DEPENDENCY
  *         May be returned if WebView2 is unavailable on Windows.
  */
-fn Webview create(int debug, void* window) @extern("webview_create");
+fn Webview create(int debug, void* window) @cname("webview_create");
 
 /**
  * Destroys a webview instance and closes the native window.
  *
  * @param w The webview instance.
  */
-fn WebviewError destroy(Webview w) @extern("webview_destroy");
+fn WebviewError destroy(Webview w) @cname("webview_destroy");
 
 /**
  * Runs the main loop until it's terminated.
  *
  * @param w The webview instance.
  */
-fn WebviewError run(Webview w) @extern("webview_run");
+fn WebviewError run(Webview w) @cname("webview_run");
 
 /**
  * Stops the main loop. It is safe to call this function from another
@@ -151,7 +151,7 @@ fn WebviewError run(Webview w) @extern("webview_run");
  *
  * @param w The webview instance.
  */
-fn WebviewError terminate(Webview w) @extern("webview_terminate");
+fn WebviewError terminate(Webview w) @cname("webview_terminate");
 
 /**
  * Schedules a function to be invoked on the thread with the run/event loop.
@@ -164,7 +164,7 @@ fn WebviewError terminate(Webview w) @extern("webview_terminate");
  * @param fn The function to be invoked.
  * @param arg An optional argument passed along to the callback function.
  */
-fn WebviewError dispatch(Webview w, DispatchCallback callback, void* arg) @extern("webview_dispatch");
+fn WebviewError dispatch(Webview w, DispatchCallback callback, void* arg) @cname("webview_dispatch");
 
 /**
  * Returns the native handle of the window associated with the webview instance.
@@ -174,7 +174,7 @@ fn WebviewError dispatch(Webview w, DispatchCallback callback, void* arg) @exter
  * @param w The webview instance.
  * @return The handle of the native window.
  */
-fn void* get_window(Webview w) @extern("webview_get_window");
+fn void* get_window(Webview w) @cname("webview_get_window");
 
 /**
  * Get a native handle of choice.
@@ -184,7 +184,7 @@ fn void* get_window(Webview w) @extern("webview_get_window");
  * @return The native handle or @c NULL.
  * @since 0.11
  */
-fn void* get_native_handle(Webview w, WebviewNativeHandleKind kind) @extern("webview_get_native_handle");
+fn void* get_native_handle(Webview w, WebviewNativeHandleKind kind) @cname("webview_get_native_handle");
 
 /**
  * Updates the title of the native window.
@@ -192,7 +192,7 @@ fn void* get_native_handle(Webview w, WebviewNativeHandleKind kind) @extern("web
  * @param w The webview instance.
  * @param title The new title.
  */
-fn WebviewError set_title(Webview w, ZString title) @extern("webview_set_title");
+fn WebviewError set_title(Webview w, ZString title) @cname("webview_set_title");
 
 /**
  * Updates the size of the native window.
@@ -210,7 +210,7 @@ fn WebviewError set_title(Webview w, ZString title) @extern("webview_set_title")
  * @param height New height.
  * @param hints Size hints.
  */
-fn WebviewError set_size(Webview w, int width, int height, WebviewHint hints) @extern("webview_set_size");
+fn WebviewError set_size(Webview w, int width, int height, WebviewHint hints) @cname("webview_set_size");
 
 /**
  * Navigates webview to the given URL. URL may be a properly encoded data URI.
@@ -225,7 +225,7 @@ fn WebviewError set_size(Webview w, int width, int height, WebviewHint hints) @e
  * @param w The webview instance.
  * @param url URL.
  */
-fn WebviewError webview_navigate(Webview w, ZString url) @extern("webview_navigate");
+fn WebviewError webview_navigate(Webview w, ZString url) @cname("webview_navigate");
 
 /**
  * Load HTML content into the webview.
@@ -238,7 +238,7 @@ fn WebviewError webview_navigate(Webview w, ZString url) @extern("webview_naviga
  * @param w The webview instance.
  * @param html HTML content.
  */
-fn WebviewError set_html(Webview w, ZString html) @extern("webview_set_html");
+fn WebviewError set_html(Webview w, ZString html) @cname("webview_set_html");
 
 /**
  * Injects JavaScript code to be executed immediately upon loading a page.
@@ -247,7 +247,7 @@ fn WebviewError set_html(Webview w, ZString html) @extern("webview_set_html");
  * @param w The webview instance.
  * @param js JS content.
  */
-fn WebviewError init(Webview w, ZString js) @extern("webview_init");
+fn WebviewError init(Webview w, ZString js) @cname("webview_init");
 
 /**
  * Evaluates arbitrary JavaScript code.
@@ -257,7 +257,7 @@ fn WebviewError init(Webview w, ZString js) @extern("webview_init");
  * @param w The webview instance.
  * @param js JS content.
  */
-fn WebviewError eval(Webview w, ZString js) @extern("webview_eval");
+fn WebviewError eval(Webview w, ZString js) @cname("webview_eval");
 
 /**
  * Binds a function pointer to a new global JavaScript function.
@@ -274,7 +274,7 @@ fn WebviewError eval(Webview w, ZString js) @extern("webview_eval");
  * @retval WEBVIEW_ERROR_DUPLICATE
  *         A binding already exists with the specified name.
  */
-fn WebviewError bind(Webview w, ZString name, BindingCallback callback, void *arg) @extern("webview_bind");
+fn WebviewError bind(Webview w, ZString name, BindingCallback callback, void *arg) @cname("webview_bind");
 
 /**
  * Removes a binding created with webview_bind().
@@ -283,7 +283,7 @@ fn WebviewError bind(Webview w, ZString name, BindingCallback callback, void *ar
  * @param name Name of the binding.
  * @retval WEBVIEW_ERROR_NOT_FOUND No binding exists with the specified name.
  */
-fn WebviewError unbind(Webview w, ZString name) @extern("webview_unbind");
+fn WebviewError unbind(Webview w, ZString name) @cname("webview_unbind");
 
 /**
  * Responds to a binding call from the JS side.
@@ -299,11 +299,11 @@ fn WebviewError unbind(Webview w, ZString name) @extern("webview_unbind");
  *               This must either be a valid JSON value or an empty string for
  *               the primitive JS value @c undefined.
  */
-fn WebviewError return_bind(Webview w, ZString id, int status, ZString result) @extern("webview_return");
+fn WebviewError return_bind(Webview w, ZString id, int status, ZString result) @cname("webview_return");
 
 /**
  * Get the library's version information.
  *
  * @since 0.10
  */
-fn WebviewVersionInfo* version() @extern("webview_version");
+fn WebviewVersionInfo* version() @cname("webview_version");

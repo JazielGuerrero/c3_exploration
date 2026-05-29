@@ -20,7 +20,7 @@ alias Handler = void;
  *
  *  @ingroup native
  */
-fn ZString get_win32_adapter(glfw::Monitor* monitor) @extern("glfwGetWin32Adapter");
+fn ZString get_win32_adapter(glfw::Monitor* monitor) @cname("glfwGetWin32Adapter");
 
 /*! @brief Returns the display device name of the specified monitor.
  *
@@ -38,7 +38,7 @@ fn ZString get_win32_adapter(glfw::Monitor* monitor) @extern("glfwGetWin32Adapte
  *
  *  @ingroup native
  */
-fn ZString get_win32_monitor(glfw::Monitor* monitor) @extern("glfwGetWin32Monitor");
+fn ZString get_win32_monitor(glfw::Monitor* monitor) @cname("glfwGetWin32Monitor");
 
 /*! @brief Returns the `HWND` of the specified window.
  *
@@ -63,7 +63,7 @@ fn ZString get_win32_monitor(glfw::Monitor* monitor) @extern("glfwGetWin32Monito
  *
  *  @ingroup native
  */
-fn Handler* get_win32_window(glfw::Window* window) @extern("glfwGetWin32Window");
+fn Handler* get_win32_window(glfw::Window* window) @cname("glfwGetWin32Window");
 
 /*! @brief Returns the `HGLRC` of the specified window.
  *
@@ -88,7 +88,7 @@ fn Handler* get_win32_window(glfw::Window* window) @extern("glfwGetWin32Window")
  *
  *  @ingroup native
  */
-fn Handler* get_wgl_context(glfw::Window* window) @extern("glfwGetWGLContext");
+fn Handler* get_wgl_context(glfw::Window* window) @cname("glfwGetWGLContext");
 
 /*! @brief Returns the `CGDirectDisplayID` of the specified monitor.
  *
@@ -105,7 +105,7 @@ fn Handler* get_wgl_context(glfw::Window* window) @extern("glfwGetWGLContext");
  *
  *  @ingroup native
  */
-fn Handler* get_cocoa_monitor(glfw::Monitor* monitor) @extern("glfwGetCocoaMonitor");
+fn Handler* get_cocoa_monitor(glfw::Monitor* monitor) @cname("glfwGetCocoaMonitor");
 
 /*! @brief Returns the `NSWindow` of the specified window.
  *
@@ -122,7 +122,7 @@ fn Handler* get_cocoa_monitor(glfw::Monitor* monitor) @extern("glfwGetCocoaMonit
  *
  *  @ingroup native
  */
-fn Handler* get_cocoa_window(glfw::Window* window) @extern("glfwGetCocoaWindow");
+fn Handler* get_cocoa_window(glfw::Window* window) @cname("glfwGetCocoaWindow");
 
 /*! @brief Returns the `NSView` of the specified window.
  *
@@ -139,7 +139,7 @@ fn Handler* get_cocoa_window(glfw::Window* window) @extern("glfwGetCocoaWindow")
  *
  *  @ingroup native
  */
-fn Handler* get_cocoa_view(glfw::Window* window) @extern("glfwGetCocoaView");
+fn Handler* get_cocoa_view(glfw::Window* window) @cname("glfwGetCocoaView");
 
 /*! @brief Returns the `NSOpenGLContext` of the specified window.
  *
@@ -156,7 +156,7 @@ fn Handler* get_cocoa_view(glfw::Window* window) @extern("glfwGetCocoaView");
  *
  *  @ingroup native
  */
-fn Handler* get_nsgl_context(glfw::Window* window) @extern("glfwGetNSGLContext");
+fn Handler* get_nsgl_context(glfw::Window* window) @cname("glfwGetNSGLContext");
 
 /*! @brief Returns the `Display` used by GLFW.
  *
@@ -173,7 +173,7 @@ fn Handler* get_nsgl_context(glfw::Window* window) @extern("glfwGetNSGLContext")
  *
  *  @ingroup native
  */
-fn Handler* get_x11_display() @extern("glfwGetX11Display");
+fn Handler* get_x11_display() @cname("glfwGetX11Display");
 
 /*! @brief Returns the `RRCrtc` of the specified monitor.
  *
@@ -190,7 +190,7 @@ fn Handler* get_x11_display() @extern("glfwGetX11Display");
  *
  *  @ingroup native
  */
-fn Handler* get_x11_adapter(glfw::Monitor* monitor) @extern("glfwGetX11Adapter");
+fn Handler* get_x11_adapter(glfw::Monitor* monitor) @cname("glfwGetX11Adapter");
 
 /*! @brief Returns the `RROutput` of the specified monitor.
  *
@@ -207,7 +207,7 @@ fn Handler* get_x11_adapter(glfw::Monitor* monitor) @extern("glfwGetX11Adapter")
  *
  *  @ingroup native
  */
-fn Handler* get_x11_monitor(glfw::Monitor* monitor) @extern("glfwGetX11Monitor");
+fn Handler* get_x11_monitor(glfw::Monitor* monitor) @cname("glfwGetX11Monitor");
 
 /*! @brief Returns the `Window` of the specified window.
  *
@@ -224,7 +224,7 @@ fn Handler* get_x11_monitor(glfw::Monitor* monitor) @extern("glfwGetX11Monitor")
  *
  *  @ingroup native
  */
-fn Handler* get_x11_window(glfw::Window* window) @extern("glfwGetX11Window");
+fn Handler* get_x11_window(glfw::Window* window) @cname("glfwGetX11Window");
 
 /*! @brief Sets the current primary selection to the specified string.
  *
@@ -246,7 +246,7 @@ fn Handler* get_x11_window(glfw::Window* window) @extern("glfwGetX11Window");
  *
  *  @ingroup native
  */
-fn void set_x11_selection_string(ZString string) @extern("glfwSetX11SelectionString");
+fn void set_x11_selection_string(ZString string) @cname("glfwSetX11SelectionString");
 
 /*! @brief Returns the contents of the current primary selection as a string.
  *
@@ -274,7 +274,7 @@ fn void set_x11_selection_string(ZString string) @extern("glfwSetX11SelectionStr
  *
  *  @ingroup native
  */
-fn ZString get_x11_selection_string() @extern("glfwGetX11SelectionString");
+fn ZString get_x11_selection_string() @cname("glfwGetX11SelectionString");
 
 /*! @brief Returns the `GLXContext` of the specified window.
  *
@@ -291,7 +291,7 @@ fn ZString get_x11_selection_string() @extern("glfwGetX11SelectionString");
  *
  *  @ingroup native
  */
-fn Handler* get_glx_context(glfw::Window* window) @extern("glfwGetGLXContext");
+fn Handler* get_glx_context(glfw::Window* window) @cname("glfwGetGLXContext");
 
 /*! @brief Returns the `GLXWindow` of the specified window.
  *
@@ -308,7 +308,7 @@ fn Handler* get_glx_context(glfw::Window* window) @extern("glfwGetGLXContext");
  *
  *  @ingroup native
  */
-fn Handler* get_glx_window(glfw::Window* window) @extern("glfwGetGLXWindow");
+fn Handler* get_glx_window(glfw::Window* window) @cname("glfwGetGLXWindow");
 
 /*! @brief Returns the `struct wl_display*` used by GLFW.
  *
@@ -325,7 +325,7 @@ fn Handler* get_glx_window(glfw::Window* window) @extern("glfwGetGLXWindow");
  *
  *  @ingroup native
  */
-fn Handler* get_wayland_display() @extern("glfwGetWaylandDisplay");
+fn Handler* get_wayland_display() @cname("glfwGetWaylandDisplay");
 
 /*! @brief Returns the `struct wl_output*` of the specified monitor.
  *
@@ -342,7 +342,7 @@ fn Handler* get_wayland_display() @extern("glfwGetWaylandDisplay");
  *
  *  @ingroup native
  */
-fn Handler* get_wayland_monitor(glfw::Monitor* monitor) @extern("glfwGetWaylandMonitor");
+fn Handler* get_wayland_monitor(glfw::Monitor* monitor) @cname("glfwGetWaylandMonitor");
 
 /*! @brief Returns the main `struct wl_surface*` of the specified window.
  *
@@ -359,7 +359,7 @@ fn Handler* get_wayland_monitor(glfw::Monitor* monitor) @extern("glfwGetWaylandM
  *
  *  @ingroup native
  */
-fn Handler* get_wayland_window(glfw::Window* window) @extern("glfwGetWaylandWindow");
+fn Handler* get_wayland_window(glfw::Window* window) @cname("glfwGetWaylandWindow");
 
 /*! @brief Returns the `EGLDisplay` used by GLFW.
  *
@@ -378,7 +378,7 @@ fn Handler* get_wayland_window(glfw::Window* window) @extern("glfwGetWaylandWind
  *
  *  @ingroup native
  */
-fn Handler* get_egl_display() @extern("glfwGetEGLDisplay");
+fn Handler* get_egl_display() @cname("glfwGetEGLDisplay");
 
 /*! @brief Returns the `EGLContext` of the specified window.
  *
@@ -395,7 +395,7 @@ fn Handler* get_egl_display() @extern("glfwGetEGLDisplay");
  *
  *  @ingroup native
  */
-fn Handler* get_egl_context(glfw::Window* window) @extern("glfwGetEGLContext");
+fn Handler* get_egl_context(glfw::Window* window) @cname("glfwGetEGLContext");
 
 /*! @brief Returns the `EGLSurface` of the specified window.
  *
@@ -412,7 +412,7 @@ fn Handler* get_egl_context(glfw::Window* window) @extern("glfwGetEGLContext");
  *
  *  @ingroup native
  */
-fn Handler* get_egl_surface(glfw::Window* window) @extern("glfwGetEGLSurface");
+fn Handler* get_egl_surface(glfw::Window* window) @cname("glfwGetEGLSurface");
 
 /*! @brief Retrieves the color buffer associated with the specified window.
  *
@@ -436,7 +436,7 @@ fn Handler* get_egl_surface(glfw::Window* window) @extern("glfwGetEGLSurface");
  *
  *  @ingroup native
  */
-fn int get_os_mesa_color_buffer(glfw::Window* window, int* width, int* height, int* format, void** buffer) @extern("glfwGetOSMesaColorBuffer");
+fn int get_os_mesa_color_buffer(glfw::Window* window, int* width, int* height, int* format, void** buffer) @cname("glfwGetOSMesaColorBuffer");
 
 /*! @brief Retrieves the depth buffer associated with the specified window.
  *
@@ -460,7 +460,7 @@ fn int get_os_mesa_color_buffer(glfw::Window* window, int* width, int* height, i
  *
  *  @ingroup native
  */
-fn int get_os_mesa_depth_buffer(glfw::Window* window, int* width, int* height, int* bytesPerValue, void** buffer) @extern("glfwGetOSMesaDepthBuffer");
+fn int get_os_mesa_depth_buffer(glfw::Window* window, int* width, int* height, int* bytesPerValue, void** buffer) @cname("glfwGetOSMesaDepthBuffer");
 
 /*! @brief Returns the `OSMesaContext` of the specified window.
  *
@@ -477,4 +477,4 @@ fn int get_os_mesa_depth_buffer(glfw::Window* window, int* width, int* height, i
  *
  *  @ingroup native
  */
-fn Handler* get_os_mesa_context(glfw::Window* window) @extern("glfwGetOSMesaContext");
+fn Handler* get_os_mesa_context(glfw::Window* window) @cname("glfwGetOSMesaContext");

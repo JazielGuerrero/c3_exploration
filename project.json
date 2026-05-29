@@ -47,9 +47,8 @@
     "linux-x64": {
       "type": "executable",
       "target": "linux-x64",
-      "c-sources": [ "src/atomic_fix.c", "src/x11_helper.c" ],
+      "c-sources": [ "src/x11_helper.c" ],
       "linked-libraries": [
-        "atomic",
         "lib/linux-x64/libbgfxRelease.a",
         "lib/linux-x64/libbimgRelease.a",
         "lib/linux-x64/libbxRelease.a",
